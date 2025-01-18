@@ -32,6 +32,9 @@ def main():
 
         for item in updatables:
             item.update(dt)
+        for asteroid in asteroids:
+            if asteroid.collision(player):
+                return
         screen.fill((200,200,200))
         for drawable in drawables:
             drawable.draw(screen)
